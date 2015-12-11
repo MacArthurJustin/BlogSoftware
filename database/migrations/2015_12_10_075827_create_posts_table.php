@@ -16,8 +16,8 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('SET NULL');
-            $table->integer('categoy_id')->unsigned()->nullable();
-            $table->foreign('categoy_id')->references('id')->on('categories')->onDelete('SET NULL');
+            $table->integer('category_id')->unsigned()->nullable();
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('SET NULL');
             $table->string('title');
             $table->longText('body');
             $table->timestamp('posted_on')->default(\DB::raw('CURRENT_TIMESTAMP'));
